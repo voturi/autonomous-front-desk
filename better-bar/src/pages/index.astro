@@ -22,6 +22,7 @@ import Layout from "../layouts/Layout.astro";
           <a
             class="cta-button rounded-full border border-[rgba(212,175,55,0.6)] px-6 py-3 text-sm font-semibold text-[#f5f2e9] hover:border-[rgba(212,175,55,0.9)]"
             href="/pricing"
+            data-open-video
           >
             Book a demo
           </a>
@@ -262,7 +263,7 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script>
-  const openButton = document.querySelector("[data-open-video]");
+  const openButtons = document.querySelectorAll("[data-open-video]");
   const modal = document.getElementById("seo-video-modal");
   const closeButtons = modal?.querySelectorAll("[data-close-video]");
 
@@ -273,8 +274,13 @@ import Layout from "../layouts/Layout.astro";
     document.body.style.overflow = show ? "hidden" : "";
   };
 
-  if (openButton && modal) {
-    openButton.addEventListener("click", () => toggleModal(true));
+  if (openButtons.length > 0 && modal) {
+    openButtons.forEach((button) =>
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        toggleModal(true);
+      })
+    );
     closeButtons?.forEach((button) =>
       button.addEventListener("click", () => toggleModal(false))
     );

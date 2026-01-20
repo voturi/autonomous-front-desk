@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+import SiteNav from "../components/SiteNav.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
+const {
+  title = "Autonomous Front Desk for Tradies",
+  description = "Ultra-modern, SEO-first website platform for Autonomous Front Desk for Tradies.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="min-h-screen bg-neutral-950 text-neutral-100">
+    <SiteNav />
+    <slot />
+    <SiteFooter />
+    <script>
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = document.querySelectorAll("[data-reveal]");
+      const parallaxItems = document.querySelectorAll("[data-parallax]");
+
+      if (!prefersReducedMotion && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        revealItems.forEach((item) => observer.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      }
+
+      if (!prefersReducedMotion && parallaxItems.length > 0) {
+        const onScroll = () => {
+          const scrollY = window.scrollY || window.pageYOffset;
+          parallaxItems.forEach((item) => {
+            const speed = Number(item.getAttribute("data-parallax")) || 0.2;
+            item.style.transform = `translateY(${scrollY * speed}px)`;
+          });
+        };
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+      }
+    </script>
+  </body>
+</html>

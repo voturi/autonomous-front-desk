@@ -1,0 +1,24 @@
+{
+  "tiers": [
+    {
+      "name": "Core plan",
+      "summary": "AI phone answering, job capture, and booking sync for growing trade teams.",
+      "priceText": "Contact us",
+      "notes": "Pricing tailored to call volume.",
+      "ctaLabel": "Book demo"
+    },
+    {
+      "name": "Premium plan",
+      "summary": "Priority routing, advanced workflows, and detailed call insights.",
+      "priceText": "Contact us",
+      "notes": "Built for high-volume metros.",
+      "ctaLabel": "Book demo"
+    }
+  ],
+  "includes": [
+    "24/7 AI call handling",
+    "Missed-call recovery",
+    "Job booking sync",
+    "Lead qualification and routing"
+  ]
+}

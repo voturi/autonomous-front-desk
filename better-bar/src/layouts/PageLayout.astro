@@ -1,0 +1,40 @@
+---
+import Layout from "./Layout.astro";
+
+const {
+  title,
+  description,
+  eyebrow,
+  heroTitle,
+  heroSubtitle,
+  ctaLabel = "Book a demo",
+  ctaHref = "/pricing",
+} = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <main class="px-6 py-20">
+    <section class="mx-auto max-w-5xl reveal" data-reveal>
+      {eyebrow && <p class="text-sm uppercase tracking-[0.2em] text-neutral-400">{eyebrow}</p>}
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
+        {heroTitle}
+      </h1>
+      {heroSubtitle && (
+        <p class="mt-5 max-w-2xl text-lg text-neutral-300">
+          {heroSubtitle}
+        </p>
+      )}
+      <div class="mt-8">
+        <a
+          class="cta-button inline-flex items-center gap-2 rounded-full border border-neutral-700 px-5 py-2 text-sm font-semibold text-neutral-100 hover:border-neutral-500"
+          href={ctaHref}
+        >
+          {ctaLabel}
+        </a>
+      </div>
+    </section>
+    <section class="mx-auto mt-16 max-w-5xl reveal" data-reveal>
+      <slot />
+    </section>
+  </main>
+</Layout>

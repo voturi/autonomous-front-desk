@@ -1,0 +1,42 @@
+---
+const links = [
+  { href: "/pricing", label: "Pricing" },
+  { href: "/features/ai-call-handling", label: "Features" },
+  { href: "/for-plumbers", label: "Use cases" },
+  { href: "/sydney", label: "Sydney" },
+  { href: "/melbourne", label: "Melbourne" },
+  { href: "/blog", label: "Blog" },
+];
+---
+
+<footer class="border-t border-neutral-900/80">
+  <div class="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-3">
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em]">
+        <span class="accent-text">Autonomous Front Desk</span>
+      </p>
+      <p class="mt-4 text-sm text-neutral-400">
+        Product-like website experience for tradies who rely on the phone.
+      </p>
+    </div>
+    <div class="text-sm text-neutral-300">
+      <p class="text-xs uppercase tracking-[0.2em] text-neutral-500">Explore</p>
+      <ul class="mt-4 grid gap-2">
+        {links.map((link) => (
+          <li>
+            <a class="hover:text-neutral-100 hover:underline hover:decoration-[rgba(212,175,55,0.5)] hover:underline-offset-4" href={link.href}>
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="text-sm text-neutral-300">
+      <p class="text-xs uppercase tracking-[0.2em] text-neutral-500">Contact</p>
+      <ul class="mt-4 grid gap-2">
+        <li>hello@aireceptionist.ai</li>
+        <li>Australia-wide support</li>
+      </ul>
+    </div>
+  </div>
+</footer>

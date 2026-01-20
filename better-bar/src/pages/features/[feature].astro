@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../../layouts/PageLayout.astro";
+
+export async function getStaticPaths() {
+  const features = await getCollection("features");
+  return features.map((entry) => ({
+    params: { feature: entry.slug },
+    props: entry,
+  }));
+}
+
+const entry = Astro.props;
+const { title, description, heroTitle, heroSubtitle, benefits } = entry.data;
+---
+
+<PageLayout
+  title={`${heroTitle} | Autonomous Front Desk for Tradies`}
+  description={description}
+  eyebrow="Feature"
+  heroTitle={heroTitle}
+  heroSubtitle={heroSubtitle}
+>
+  <div class="grid gap-10 md:grid-cols-2">
+    <section
+      class="accent-panel hover-glow reveal rounded-2xl border border-neutral-800 p-8"
+      data-reveal
+      style="--reveal-delay: 0.1s;"
+    >
+      <h2 class="text-xl font-semibold">What it does</h2>
+      <p class="mt-3 text-neutral-300">
+        Designed for tradies who rely on the phone, built to capture and qualify
+        every inbound call.
+      </p>
+    </section>
+    <section
+      class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8"
+      data-reveal
+      style="--reveal-delay: 0.22s;"
+    >
+      <h2 class="text-xl font-semibold">Why it matters</h2>
+      <p class="mt-3 text-neutral-300">
+        Fewer missed calls means more booked work and faster response times.
+      </p>
+    </section>
+  </div>
+  <div class="mt-12 reveal" data-reveal style="--reveal-delay: 0.2s;">
+    <h2 class="text-2xl font-semibold">Results</h2>
+    <ul class="mt-4 grid gap-3 text-neutral-300 md:grid-cols-2">
+      {benefits.map((item, index) => (
+        <li class={index === 0 ? "accent-text" : ""}>{item}</li>
+      ))}
+    </ul>
+  </div>
+</PageLayout>

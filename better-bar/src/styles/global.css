@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --ink: #0b0d10;
+  --ink-2: #0f1216;
+  --glow: #8cf7d4;
+  --aussie-green: #0b7d3e;
+  --aussie-gold: #d4af37;
+  --aussie-cream: #f5f2e9;
+  --steel: #9aa0a6;
+}
+
+body {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(1200px 520px at 50% 15%, rgba(18, 22, 28, 0.95), transparent 70%),
+    radial-gradient(900px 600px at 85% 5%, rgba(140, 247, 212, 0.1), transparent 65%),
+    radial-gradient(900px 520px at 10% 0%, rgba(120, 160, 255, 0.08), transparent 60%),
+    radial-gradient(900px 900px at 50% 120%, rgba(6, 8, 10, 0.9), transparent 60%),
+    linear-gradient(130deg, rgba(255, 255, 255, 0.025), transparent 45%),
+    linear-gradient(115deg, rgba(245, 242, 233, 0.06), transparent 50%),
+    linear-gradient(200deg, rgba(11, 125, 62, 0.05), transparent 55%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 140px);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Newsreader", "Space Grotesk", serif;
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.8),
+    rgba(245, 242, 233, 0.75),
+    rgba(11, 125, 62, 0.8)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.accent-text {
+  background: linear-gradient(90deg, var(--aussie-gold), var(--aussie-cream), var(--aussie-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.accent-text-soft {
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.7),
+    rgba(245, 242, 233, 0.65),
+    rgba(11, 125, 62, 0.7)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.accent-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.45),
+    rgba(245, 242, 233, 0.2),
+    rgba(11, 125, 62, 0.35),
+    transparent
+  );
+}
+
+.accent-panel {
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.2),
+    0 40px 120px -80px rgba(11, 125, 62, 0.5);
+}
+
+.accent-border {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.article-content {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #d6d7db;
+}
+
+.article-content h2 {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  color: #f2f3f5;
+}
+
+.article-content h3 {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: #f2f3f5;
+}
+
+.article-content p {
+  margin-top: 1rem;
+}
+
+.article-content ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.article-content a {
+  color: var(--aussie-cream);
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 4px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-button {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px -30px rgba(212, 175, 55, 0.6);
+}
+
+.ghost-button {
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.ghost-button:hover {
+  transform: translateY(-1px);
+}
+
+.hover-glow {
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+
+.hover-glow:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.25),
+    0 30px 80px -50px rgba(11, 125, 62, 0.5);
+}
+
+.stage-active {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.2),
+    0 20px 60px -45px rgba(11, 125, 62, 0.6);
+}
+
+.glass-modal {
+  background: linear-gradient(140deg, rgba(16, 20, 26, 0.75), rgba(10, 12, 16, 0.9));
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.3),
+    0 0 0 2px rgba(11, 125, 62, 0.15),
+    0 40px 120px -60px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(18px);
+}
+
+.glass-overlay {
+  background: rgba(8, 10, 14, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.parallax-orb {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.35),
+    rgba(11, 125, 62, 0.2) 55%,
+    transparent 70%
+  );
+  filter: blur(4px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.fade-up {
+  animation: fadeUp 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

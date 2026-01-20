@@ -1,0 +1,324 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Autonomous Front Desk for Tradies"
+  description="Ultra-modern, SEO-first website platform for Autonomous Front Desk for Tradies."
+>
+  <main class="px-6 py-20">
+    <section class="relative mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.2fr_0.8fr]">
+      <div class="reveal" data-reveal style="--reveal-delay: 0.05s;">
+        <p class="text-xs uppercase tracking-[0.4em] text-neutral-400">Autonomous Front Desk</p>
+        <div class="accent-rule mt-4 w-24"></div>
+        <h1 class="accent-text-soft mt-6 text-4xl font-semibold leading-tight md:text-6xl">
+          Your phone never goes unanswered.
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg text-neutral-300">
+          A product-grade website and AI receptionist platform for Australian tradies.
+          Capture every call, qualify every lead, and book more jobs.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            class="cta-button rounded-full border border-[rgba(212,175,55,0.6)] px-6 py-3 text-sm font-semibold text-[#f5f2e9] hover:border-[rgba(212,175,55,0.9)]"
+            href="/pricing"
+          >
+            Book a demo
+          </a>
+          <a
+            class="ghost-button rounded-full border border-neutral-700 px-6 py-3 text-sm font-semibold text-neutral-100 hover:border-neutral-500"
+            href="/features/ai-call-handling"
+          >
+            See how it works
+          </a>
+        </div>
+        <div class="mt-10 grid max-w-md grid-cols-3 gap-4 text-sm text-neutral-400">
+          <div>
+            <p class="accent-text text-2xl font-semibold">90s</p>
+            <p>Avg. engagement</p>
+          </div>
+          <div>
+            <p class="accent-text text-2xl font-semibold">5%</p>
+            <p>Target lead rate</p>
+          </div>
+          <div>
+            <p class="accent-text text-2xl font-semibold">24/7</p>
+            <p>Call coverage</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="accent-panel hover-glow reveal rounded-3xl border border-neutral-800 bg-neutral-900/60 p-6"
+        data-reveal
+        style="--reveal-delay: 0.15s;"
+      >
+        <div class="rounded-2xl border border-neutral-800 bg-neutral-950/80 p-5">
+          <div class="flex items-center justify-between">
+            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Live intake</p>
+            <div class="inline-flex rounded-full border border-neutral-800 bg-neutral-900/60 p-1 text-[10px] uppercase tracking-[0.3em] text-neutral-400" role="tablist">
+              <button class="px-3 py-1 text-neutral-100" data-tab="inbound" aria-selected="true" type="button">
+                Inbound
+              </button>
+              <button class="px-3 py-1 text-neutral-400" data-tab="after-hours" aria-selected="false" type="button">
+                After hours
+              </button>
+            </div>
+          </div>
+          <div class="mt-4 space-y-3 text-sm text-neutral-300" data-panel="inbound">
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/80 p-3">
+              Caller: Burst pipe in Bondi, need urgent fix.
+            </div>
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/80 p-3">
+              AI: Logged job, captured photos, scheduled 3pm slot.
+            </div>
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/80 p-3">
+              Summary sent to tech lead + customer confirmation.
+            </div>
+          </div>
+          <div class="mt-4 hidden space-y-3 text-sm text-neutral-300" data-panel="after-hours">
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/80 p-3">
+              Caller: No hot water, emergency service needed.
+            </div>
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/80 p-3">
+              AI: Captured details, confirmed location, triaged urgency.
+            </div>
+            <div class="rounded-xl border border-neutral-800 bg-neutral-900/80 p-3">
+              Morning slot reserved and customer notified.
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 grid gap-3 text-sm text-neutral-400">
+          <div class="flex items-center justify-between rounded-xl border border-neutral-800 px-4 py-3">
+            <span>Calls answered</span>
+            <span class="text-neutral-100">132</span>
+          </div>
+          <div class="flex items-center justify-between rounded-xl border border-neutral-800 px-4 py-3">
+            <span>Jobs booked</span>
+            <span class="text-neutral-100">47</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-24 max-w-6xl">
+      <div class="grid gap-8 md:grid-cols-3">
+        <button
+          class="hover-glow reveal accent-border rounded-3xl border border-neutral-800 bg-neutral-900/40 p-8 text-left"
+          data-reveal
+          style="--reveal-delay: 0.05s;"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="seo-video-modal"
+          data-open-video
+        >
+          <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">SEO First</p>
+          <h2 class="mt-4 text-2xl font-semibold">Every page ranks</h2>
+          <p class="mt-3 text-sm text-neutral-300">
+            Structured, semantic content designed to win high-intent local searches.
+          </p>
+          <p class="mt-6 text-xs uppercase tracking-[0.3em] text-neutral-400">
+            Play demo
+          </p>
+        </button>
+        <article
+          class="hover-glow reveal accent-border rounded-3xl border border-neutral-800 bg-neutral-900/40 p-8"
+          data-reveal
+          style="--reveal-delay: 0.15s;"
+        >
+          <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Product UX</p>
+          <h2 class="mt-4 text-2xl font-semibold">Feels like software</h2>
+          <p class="mt-3 text-sm text-neutral-300">
+            Interactive flows and scrollytelling that build trust fast.
+          </p>
+        </article>
+        <article
+          class="hover-glow reveal accent-border rounded-3xl border border-neutral-800 bg-neutral-900/40 p-8"
+          data-reveal
+          style="--reveal-delay: 0.25s;"
+        >
+          <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Conversion</p>
+          <h2 class="mt-4 text-2xl font-semibold">Built for buyers</h2>
+          <p class="mt-3 text-sm text-neutral-300">
+            Clear CTAs, call proof, and fast decision paths for tradie owners.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-24 max-w-6xl">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="reveal" data-reveal style="--reveal-delay: 0.05s;">
+          <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Scrollytelling</p>
+          <h2 class="mt-4 text-3xl font-semibold">A front desk that moves with the job</h2>
+          <p class="mt-4 text-neutral-300">
+            Scroll through the lifecycle and see how the autonomous front desk handles intake,
+            qualification, and booking without handoffs.
+          </p>
+          <div
+            class="mt-8 rounded-2xl border border-neutral-800 bg-neutral-900/50 p-5 lg:sticky lg:top-24"
+            data-stage-panel
+          >
+            <p class="text-sm text-neutral-400">Current stage</p>
+            <p class="mt-2 text-xl font-semibold" data-stage-title>Inbound call triage</p>
+            <p class="mt-3 text-sm text-neutral-300" data-stage-body>
+              AI answers instantly, captures urgency, and validates job details.
+            </p>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div
+            class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6"
+            data-reveal
+            style="--reveal-delay: 0.1s;"
+            data-stage
+            data-stage-title="Inbound call triage"
+            data-stage-body="AI answers instantly, captures urgency, and validates job details."
+          >
+            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Stage 01</p>
+            <h3 class="mt-3 text-xl font-semibold">Immediate intake</h3>
+            <p class="mt-2 text-sm text-neutral-300">
+              Always-on answering keeps every lead warm, even during jobs or travel.
+            </p>
+          </div>
+          <div
+            class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6"
+            data-reveal
+            style="--reveal-delay: 0.18s;"
+            data-stage
+            data-stage-title="Lead qualification"
+            data-stage-body="Captures scope, location, and urgency so the team shows up prepared."
+          >
+            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Stage 02</p>
+            <h3 class="mt-3 text-xl font-semibold">Qualification</h3>
+            <p class="mt-2 text-sm text-neutral-300">
+              Captures scope, location, and urgency so the team shows up prepared.
+            </p>
+          </div>
+          <div
+            class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6"
+            data-reveal
+            style="--reveal-delay: 0.26s;"
+            data-stage
+            data-stage-title="Booking and sync"
+            data-stage-body="Confirms appointment windows and syncs into scheduling tools."
+          >
+            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Stage 03</p>
+            <h3 class="mt-3 text-xl font-semibold">Booking and sync</h3>
+            <p class="mt-2 text-sm text-neutral-300">
+              Confirms appointment windows and syncs into scheduling tools.
+            </p>
+          </div>
+          <div
+            class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6"
+            data-reveal
+            style="--reveal-delay: 0.34s;"
+            data-stage
+            data-stage-title="Follow-through"
+            data-stage-body="Sends summaries to the team and confirmations to the customer."
+          >
+            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Stage 04</p>
+            <h3 class="mt-3 text-xl font-semibold">Follow-through</h3>
+            <p class="mt-2 text-sm text-neutral-300">
+              Sends summaries to the team and confirmations to the customer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="seo-video-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+      aria-label="SEO First demo video"
+    >
+      <div class="glass-overlay absolute inset-0" data-close-video></div>
+      <div class="relative z-10 w-[min(900px,92vw)] rounded-3xl p-5 glass-modal">
+        <div class="flex items-center justify-between">
+          <p class="accent-text text-xs uppercase tracking-[0.3em]">SEO First demo</p>
+          <button
+            class="rounded-full border border-neutral-700 px-3 py-1 text-xs uppercase tracking-widest text-neutral-200 hover:border-neutral-500"
+            type="button"
+            data-close-video
+          >
+            Close
+          </button>
+        </div>
+        <div class="mt-4 aspect-video overflow-hidden rounded-2xl border border-neutral-800">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="SEO First demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const openButton = document.querySelector("[data-open-video]");
+  const modal = document.getElementById("seo-video-modal");
+  const closeButtons = modal?.querySelectorAll("[data-close-video]");
+
+  const toggleModal = (show) => {
+    if (!modal) return;
+    modal.classList.toggle("hidden", !show);
+    modal.classList.toggle("flex", show);
+    document.body.style.overflow = show ? "hidden" : "";
+  };
+
+  if (openButton && modal) {
+    openButton.addEventListener("click", () => toggleModal(true));
+    closeButtons?.forEach((button) =>
+      button.addEventListener("click", () => toggleModal(false))
+    );
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") toggleModal(false);
+    });
+  }
+
+  const tabButtons = document.querySelectorAll("[data-tab]");
+  const panels = document.querySelectorAll("[data-panel]");
+  if (tabButtons.length > 0 && panels.length > 0) {
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const tab = button.getAttribute("data-tab");
+        tabButtons.forEach((btn) => {
+          btn.setAttribute("aria-selected", btn === button ? "true" : "false");
+          btn.classList.toggle("text-neutral-100", btn === button);
+          btn.classList.toggle("text-neutral-400", btn !== button);
+        });
+        panels.forEach((panel) => {
+          panel.classList.toggle("hidden", panel.getAttribute("data-panel") !== tab);
+        });
+      });
+    });
+  }
+
+  const stagePanel = document.querySelector("[data-stage-panel]");
+  const stageTitle = stagePanel?.querySelector("[data-stage-title]");
+  const stageBody = stagePanel?.querySelector("[data-stage-body]");
+  const stageCards = document.querySelectorAll("[data-stage]");
+  if (stagePanel && stageTitle && stageBody && stageCards.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const card = entry.target;
+          stageCards.forEach((item) => item.classList.remove("stage-active"));
+          card.classList.add("stage-active");
+          stageTitle.textContent = card.getAttribute("data-stage-title") ?? "";
+          stageBody.textContent = card.getAttribute("data-stage-body") ?? "";
+        });
+      },
+      { threshold: 0.6 }
+    );
+    stageCards.forEach((card) => observer.observe(card));
+  }
+</script>

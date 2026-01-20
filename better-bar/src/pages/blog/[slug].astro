@@ -1,0 +1,62 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../../layouts/PageLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { title, description, pubDate } = post.data;
+const { Content } = await post.render();
+const formattedDate = new Date(pubDate).toLocaleDateString("en-AU", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+const currentIndex = sortedPosts.findIndex((entry) => entry.slug === post.slug);
+const previousPost = sortedPosts[currentIndex + 1];
+const nextPost = sortedPosts[currentIndex - 1];
+---
+
+<PageLayout
+  title={`${title} | Autonomous Front Desk for Tradies`}
+  description={description}
+  eyebrow="Blog"
+  heroTitle={title}
+  heroSubtitle={description}
+>
+  <div class="text-sm text-neutral-400">{formattedDate}</div>
+  <article class="article-content mt-8 reveal" data-reveal style="--reveal-delay: 0.1s;">
+    <Content />
+  </article>
+  <div
+    class="mt-12 grid gap-4 border-t border-neutral-900/80 pt-6 text-sm text-neutral-300 md:grid-cols-2 reveal"
+    data-reveal
+    style="--reveal-delay: 0.2s;"
+  >
+    <div>
+      {previousPost && (
+        <a class="hover:text-neutral-100" href={`/blog/${previousPost.slug}`}>
+          ← {previousPost.data.title}
+        </a>
+      )}
+    </div>
+    <div class="md:text-right">
+      {nextPost && (
+        <a class="hover:text-neutral-100" href={`/blog/${nextPost.slug}`}>
+          {nextPost.data.title} →
+        </a>
+      )}
+    </div>
+  </div>
+</PageLayout>

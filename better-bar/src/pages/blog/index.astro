@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+---
+
+<PageLayout
+  title="Blog | Autonomous Front Desk for Tradies"
+  description="Pain-driven SEO content for tradies and service businesses."
+  eyebrow="Blog"
+  heroTitle="Answers that win jobs"
+  heroSubtitle="Practical insights for tradies who rely on the phone to grow."
+>
+  <div class="grid gap-6">
+    {posts.map((post, index) => (
+      <article
+        class:list={[
+          "rounded-2xl border border-neutral-800 p-6",
+          index === 0 ? "accent-panel" : "bg-neutral-900/40",
+          "reveal",
+          "hover-glow",
+        ]}
+        data-reveal
+        style={`--reveal-delay: ${0.08 + index * 0.08}s;`}
+      >
+        <h2 class="text-xl font-semibold">
+          <a class="hover:text-neutral-100" href={`/blog/${post.slug}`}>
+            {post.data.title}
+          </a>
+        </h2>
+        <p class="mt-3 text-neutral-300">{post.data.description}</p>
+        <a
+          class="mt-4 inline-flex text-xs uppercase tracking-[0.3em] text-neutral-400 hover:text-neutral-100"
+          href={`/blog/${post.slug}`}
+        >
+          Read more
+        </a>
+      </article>
+    ))}
+  </div>
+</PageLayout>

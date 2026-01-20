@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../layouts/PageLayout.astro";
+
+export async function getStaticPaths() {
+  const useCases = await getCollection("use-cases");
+  return useCases.map((entry) => ({
+    params: { trade: entry.slug },
+    props: entry,
+  }));
+}
+
+const entry = Astro.props;
+const { title, description, heroTitle, heroSubtitle, trade, outcomes } = entry.data;
+const tradeName = trade ?? "Tradies";
+---
+
+<PageLayout
+  title={`${heroTitle} | Autonomous Front Desk for Tradies`}
+  description={description}
+  eyebrow="Use case"
+  heroTitle={heroTitle}
+  heroSubtitle={heroSubtitle}
+>
+  <div class="grid gap-10 md:grid-cols-2">
+    <section
+      class="accent-panel hover-glow reveal rounded-2xl border border-neutral-800 p-8"
+      data-reveal
+      style="--reveal-delay: 0.1s;"
+    >
+      <h2 class="text-xl font-semibold">Why {tradeName} miss calls</h2>
+      <p class="mt-3 text-neutral-300">
+        Phone calls land during jobs, driving, and after hours. Those missed calls
+        become missed jobs.
+      </p>
+    </section>
+    <section
+      class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8"
+      data-reveal
+      style="--reveal-delay: 0.22s;"
+    >
+      <h2 class="text-xl font-semibold">How AI answers for {tradeName}</h2>
+      <p class="mt-3 text-neutral-300">
+        Qualify new leads, capture job details, and book directly into your schedule.
+      </p>
+    </section>
+  </div>
+  <div class="mt-12 reveal" data-reveal style="--reveal-delay: 0.2s;">
+    <h2 class="text-2xl font-semibold">Key outcomes</h2>
+    <ul class="mt-4 grid gap-3 text-neutral-300 md:grid-cols-2">
+      {outcomes.map((item, index) => (
+        <li class={index === 0 ? "accent-text" : ""}>{item}</li>
+      ))}
+    </ul>
+  </div>
+</PageLayout>

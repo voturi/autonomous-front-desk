@@ -1,8 +1,8 @@
 ---
-import { getEntryBySlug } from "astro:content";
+import { getEntry } from "astro:content";
 import PageLayout from "../layouts/PageLayout.astro";
 
-const entry = await getEntryBySlug("pricing", "plans");
+const entry = await getEntry("pricing", "plans");
 if (!entry) {
   throw new Error("Missing pricing content.");
 }

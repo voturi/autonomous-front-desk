@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import PageLayout from "../layouts/PageLayout.astro";
+import { localBusinessSchema } from "../lib/schema";
 
 const entry = await getEntry({ collection: "locations", slug: "sydney" });
 if (!entry) {
@@ -17,32 +18,36 @@ const { title, description, heroTitle, heroSubtitle, highlights } = entry.data;
   heroTitle={heroTitle}
   heroSubtitle={heroSubtitle}
   ctaLabel="Book a demo in Sydney"
+  schema={localBusinessSchema({
+    description,
+    areaServed: "Sydney, Australia",
+  })}
 >
   <div class="grid gap-10 md:grid-cols-2">
     <section
-      class="accent-panel hover-glow reveal rounded-2xl border border-neutral-800 p-8"
+      class="accent-panel glass-surface hover-glow reveal rounded-2xl p-8"
       data-reveal
       style="--reveal-delay: 0.1s;"
     >
       <h2 class="text-xl font-semibold">Why Sydney tradies miss calls</h2>
-      <p class="mt-3 text-neutral-300">
+      <p class="mt-3 text-secondary">
         High call volume across metro areas means urgent jobs hit voicemail too often.
       </p>
     </section>
     <section
-      class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8"
+      class="glass-surface hover-glow reveal rounded-2xl p-8"
       data-reveal
       style="--reveal-delay: 0.22s;"
     >
       <h2 class="text-xl font-semibold">How AI handles Sydney demand</h2>
-      <p class="mt-3 text-neutral-300">
+      <p class="mt-3 text-secondary">
         Capture emergency jobs, qualify leads, and book work without delays.
       </p>
     </section>
   </div>
   <div class="mt-12 reveal" data-reveal style="--reveal-delay: 0.2s;">
     <h2 class="text-2xl font-semibold">Built for Sydney trades</h2>
-    <ul class="mt-4 grid gap-3 text-neutral-300 md:grid-cols-2">
+    <ul class="mt-4 grid gap-3 text-secondary md:grid-cols-2">
       {highlights.map((item, index) => (
         <li class={index === 0 ? "accent-text" : ""}>{item}</li>
       ))}

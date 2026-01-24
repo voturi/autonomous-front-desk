@@ -6,7 +6,11 @@ import SiteFooter from "../components/SiteFooter.astro";
 const {
   title = "Autonomous Front Desk for Tradies",
   description = "Ultra-modern, SEO-first website platform for Autonomous Front Desk for Tradies.",
+  canonical,
+  schema,
 } = Astro.props;
+
+const canonicalUrl = canonical ?? Astro.url.toString();
 ---
 
 <!doctype html>
@@ -18,6 +22,18 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="en_AU" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+    )}
   </head>
   <body class="min-h-screen bg-neutral-950 text-neutral-100">
     <SiteNav />

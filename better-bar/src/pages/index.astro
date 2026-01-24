@@ -1,20 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { productSchema, softwareApplicationSchema } from "../lib/schema";
 ---
 
 <Layout
   title="Autonomous Front Desk for Tradies"
   description="Ultra-modern, SEO-first website platform for Autonomous Front Desk for Tradies."
+  schema={{
+    "@context": "https://schema.org",
+    "@graph": [
+      softwareApplicationSchema({
+        description:
+          "Autonomous front desk platform for tradies that answers calls, qualifies leads, and books jobs.",
+      }),
+      productSchema({
+        description:
+          "Autonomous front desk platform for tradies that answers calls, qualifies leads, and books jobs.",
+      }),
+    ],
+  }}
 >
   <main class="px-6 py-20">
     <section class="relative mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.2fr_0.8fr]">
       <div class="reveal" data-reveal style="--reveal-delay: 0.05s;">
-        <p class="text-xs uppercase tracking-[0.4em] text-neutral-400">Autonomous Front Desk</p>
+        <p class="accent-text glow-text text-sm uppercase tracking-[0.6em]">NEXA</p>
         <div class="accent-rule mt-4 w-24"></div>
         <h1 class="accent-text-soft mt-6 text-4xl font-semibold leading-tight md:text-6xl">
           Your phone never goes unanswered.
         </h1>
-        <p class="mt-6 max-w-2xl text-lg text-neutral-300">
+        <p class="mt-6 max-w-2xl text-lg text-secondary">
           A product-grade website and AI receptionist platform for Australian tradies.
           Capture every call, qualify every lead, and book more jobs.
         </p>
@@ -33,29 +47,29 @@ import Layout from "../layouts/Layout.astro";
             See how it works
           </a>
         </div>
-        <div class="mt-10 grid max-w-md grid-cols-3 gap-4 text-sm text-neutral-400">
-          <div>
+        <div class="mt-10 grid max-w-md grid-cols-3 gap-4 text-sm text-muted">
+          <div class="glass-surface rounded-2xl p-4">
             <p class="accent-text text-2xl font-semibold">90s</p>
             <p>Avg. engagement</p>
           </div>
-          <div>
+          <div class="glass-surface rounded-2xl p-4">
             <p class="accent-text text-2xl font-semibold">5%</p>
             <p>Target lead rate</p>
           </div>
-          <div>
+          <div class="glass-surface rounded-2xl p-4">
             <p class="accent-text text-2xl font-semibold">24/7</p>
             <p>Call coverage</p>
           </div>
         </div>
       </div>
       <div
-        class="accent-panel hover-glow reveal rounded-3xl border border-neutral-800 bg-neutral-900/60 p-6"
+        class="accent-panel glass-surface hover-glow reveal rounded-3xl p-6"
         data-reveal
         style="--reveal-delay: 0.15s;"
       >
-        <div class="rounded-2xl border border-neutral-800 bg-neutral-950/80 p-5">
-          <div class="flex items-center justify-between">
-            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Live intake</p>
+          <div class="rounded-2xl border border-neutral-800 bg-neutral-950/80 p-5">
+            <div class="flex items-center justify-between">
+              <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Live intake</p>
             <div class="inline-flex rounded-full border border-neutral-800 bg-neutral-900/60 p-1 text-[10px] uppercase tracking-[0.3em] text-neutral-400" role="tablist">
               <button class="px-3 py-1 text-neutral-100" data-tab="inbound" aria-selected="true" type="button">
                 Inbound
@@ -65,7 +79,7 @@ import Layout from "../layouts/Layout.astro";
               </button>
             </div>
           </div>
-          <div class="mt-4 space-y-3 text-sm text-neutral-300" data-panel="inbound">
+          <div class="mt-4 space-y-3 text-sm text-secondary" data-panel="inbound">
             <div class="rounded-xl border border-neutral-800 bg-neutral-900/80 p-3">
               Caller: Burst pipe in Bondi, need urgent fix.
             </div>
@@ -76,7 +90,7 @@ import Layout from "../layouts/Layout.astro";
               Summary sent to tech lead + customer confirmation.
             </div>
           </div>
-          <div class="mt-4 hidden space-y-3 text-sm text-neutral-300" data-panel="after-hours">
+          <div class="mt-4 hidden space-y-3 text-sm text-secondary" data-panel="after-hours">
             <div class="rounded-xl border border-neutral-800 bg-neutral-900/80 p-3">
               Caller: No hot water, emergency service needed.
             </div>
@@ -88,7 +102,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
         </div>
-        <div class="mt-6 grid gap-3 text-sm text-neutral-400">
+        <div class="mt-6 grid gap-3 text-sm text-muted">
           <div class="flex items-center justify-between rounded-xl border border-neutral-800 px-4 py-3">
             <span>Calls answered</span>
             <span class="text-neutral-100">132</span>
@@ -104,7 +118,7 @@ import Layout from "../layouts/Layout.astro";
     <section class="mx-auto mt-24 max-w-6xl">
       <div class="grid gap-8 md:grid-cols-3">
         <button
-          class="hover-glow reveal accent-border rounded-3xl border border-neutral-800 bg-neutral-900/40 p-8 text-left"
+          class="hover-glow reveal accent-border glass-surface rounded-3xl p-8 text-left"
           data-reveal
           style="--reveal-delay: 0.05s;"
           type="button"
@@ -114,7 +128,7 @@ import Layout from "../layouts/Layout.astro";
         >
           <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">SEO First</p>
           <h2 class="mt-4 text-2xl font-semibold">Every page ranks</h2>
-          <p class="mt-3 text-sm text-neutral-300">
+          <p class="mt-3 text-sm text-secondary">
             Structured, semantic content designed to win high-intent local searches.
           </p>
           <p class="mt-6 text-xs uppercase tracking-[0.3em] text-neutral-400">
@@ -122,24 +136,24 @@ import Layout from "../layouts/Layout.astro";
           </p>
         </button>
         <article
-          class="hover-glow reveal accent-border rounded-3xl border border-neutral-800 bg-neutral-900/40 p-8"
+          class="hover-glow reveal accent-border glass-surface rounded-3xl p-8"
           data-reveal
           style="--reveal-delay: 0.15s;"
         >
           <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Product UX</p>
           <h2 class="mt-4 text-2xl font-semibold">Feels like software</h2>
-          <p class="mt-3 text-sm text-neutral-300">
+          <p class="mt-3 text-sm text-secondary">
             Interactive flows and scrollytelling that build trust fast.
           </p>
         </article>
         <article
-          class="hover-glow reveal accent-border rounded-3xl border border-neutral-800 bg-neutral-900/40 p-8"
+          class="hover-glow reveal accent-border glass-surface rounded-3xl p-8"
           data-reveal
           style="--reveal-delay: 0.25s;"
         >
           <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Conversion</p>
           <h2 class="mt-4 text-2xl font-semibold">Built for buyers</h2>
-          <p class="mt-3 text-sm text-neutral-300">
+          <p class="mt-3 text-sm text-secondary">
             Clear CTAs, call proof, and fast decision paths for tradie owners.
           </p>
         </article>
@@ -151,75 +165,75 @@ import Layout from "../layouts/Layout.astro";
         <div class="reveal" data-reveal style="--reveal-delay: 0.05s;">
           <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Scrollytelling</p>
           <h2 class="mt-4 text-3xl font-semibold">A front desk that moves with the job</h2>
-          <p class="mt-4 text-neutral-300">
+          <p class="mt-4 text-secondary">
             Scroll through the lifecycle and see how the autonomous front desk handles intake,
             qualification, and booking without handoffs.
           </p>
           <div
-            class="mt-8 rounded-2xl border border-neutral-800 bg-neutral-900/50 p-5 lg:sticky lg:top-24"
+            class="mt-8 glass-surface rounded-2xl p-5 lg:sticky lg:top-24"
             data-stage-panel
           >
-            <p class="text-sm text-neutral-400">Current stage</p>
+            <p class="text-sm text-muted">Current stage</p>
             <p class="mt-2 text-xl font-semibold" data-stage-title>Inbound call triage</p>
-            <p class="mt-3 text-sm text-neutral-300" data-stage-body>
+            <p class="mt-3 text-sm text-secondary" data-stage-body>
               AI answers instantly, captures urgency, and validates job details.
             </p>
           </div>
         </div>
         <div class="space-y-6">
           <div
-            class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6"
+            class="hover-glow reveal glass-surface rounded-2xl p-6"
             data-reveal
             style="--reveal-delay: 0.1s;"
             data-stage
             data-stage-title="Inbound call triage"
             data-stage-body="AI answers instantly, captures urgency, and validates job details."
           >
-            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Stage 01</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-muted">Stage 01</p>
             <h3 class="mt-3 text-xl font-semibold">Immediate intake</h3>
-            <p class="mt-2 text-sm text-neutral-300">
+            <p class="mt-2 text-sm text-secondary">
               Always-on answering keeps every lead warm, even during jobs or travel.
             </p>
           </div>
           <div
-            class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6"
+            class="hover-glow reveal glass-surface rounded-2xl p-6"
             data-reveal
             style="--reveal-delay: 0.18s;"
             data-stage
             data-stage-title="Lead qualification"
             data-stage-body="Captures scope, location, and urgency so the team shows up prepared."
           >
-            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Stage 02</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-muted">Stage 02</p>
             <h3 class="mt-3 text-xl font-semibold">Qualification</h3>
-            <p class="mt-2 text-sm text-neutral-300">
+            <p class="mt-2 text-sm text-secondary">
               Captures scope, location, and urgency so the team shows up prepared.
             </p>
           </div>
           <div
-            class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6"
+            class="hover-glow reveal glass-surface rounded-2xl p-6"
             data-reveal
             style="--reveal-delay: 0.26s;"
             data-stage
             data-stage-title="Booking and sync"
             data-stage-body="Confirms appointment windows and syncs into scheduling tools."
           >
-            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Stage 03</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-muted">Stage 03</p>
             <h3 class="mt-3 text-xl font-semibold">Booking and sync</h3>
-            <p class="mt-2 text-sm text-neutral-300">
+            <p class="mt-2 text-sm text-secondary">
               Confirms appointment windows and syncs into scheduling tools.
             </p>
           </div>
           <div
-            class="hover-glow reveal rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6"
+            class="hover-glow reveal glass-surface rounded-2xl p-6"
             data-reveal
             style="--reveal-delay: 0.34s;"
             data-stage
             data-stage-title="Follow-through"
             data-stage-body="Sends summaries to the team and confirmations to the customer."
           >
-            <p class="text-xs uppercase tracking-[0.3em] text-neutral-500">Stage 04</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-muted">Stage 04</p>
             <h3 class="mt-3 text-xl font-semibold">Follow-through</h3>
-            <p class="mt-2 text-sm text-neutral-300">
+            <p class="mt-2 text-sm text-secondary">
               Sends summaries to the team and confirmations to the customer.
             </p>
           </div>

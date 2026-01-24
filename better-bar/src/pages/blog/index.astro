@@ -16,8 +16,8 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
     {posts.map((post, index) => (
       <article
         class:list={[
-          "rounded-2xl border border-neutral-800 p-6",
-          index === 0 ? "accent-panel" : "bg-neutral-900/40",
+          "rounded-2xl p-6 glass-surface",
+          index === 0 ? "accent-panel" : "",
           "reveal",
           "hover-glow",
         ]}
@@ -29,9 +29,9 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
             {post.data.title}
           </a>
         </h2>
-        <p class="mt-3 text-neutral-300">{post.data.description}</p>
+        <p class="mt-3 text-secondary">{post.data.description}</p>
         <a
-          class="mt-4 inline-flex text-xs uppercase tracking-[0.3em] text-neutral-400 hover:text-neutral-100"
+          class="mt-4 inline-flex text-xs uppercase tracking-[0.3em] text-muted hover:text-neutral-100"
           href={`/blog/${post.slug}`}
         >
           Read more
